@@ -217,7 +217,3 @@ time.format = "%A, %B %d, %Y at %H:%M"
 stop_threshold = 2  # in seconds
 third_party_skills_dir = "~/.mycroft/third_party_skills"
 ```
-
-Currently there is no skill isolation this may be a security risk so take that into consideration before you write a skill to get the balance of your bank account.
-
-
