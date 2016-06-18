@@ -191,12 +191,20 @@ Intent tests take the form of an `.intent.json` file with a structure inside tha
 ### 3rd party skills
 Sometimes you'll want to write a special skill that's just for you, or users of your project.
 
-In this situation you'll want to create a 3rd party skill.  The file structure & behavior of a 3rd party skill is the same as a skill dir in [mycroft/skills](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/).  So your users can easily unpack a zip to `~/.mycroft/third_party_skills` or for system wide deployment `/opt/mycroft/third_party`.  You'll need to restart the skills service any time a new 3rd party skill is installed.
+In this situation you'll want to create a 3rd party skill.  The file structure & behavior of a 3rd party skill is the same as a skill dir in [mycroft/skills](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/).
+
+This makes skill distribution a simple task.
+
+- Zip the skills folder
+  - `zip -r ./my_skill.zip ./my_skill`
+- Users unzip:
+  - `unzip ~/mycroft/third_party_skills`
+  - Restart the skills service.
 
 Mycroft looks for 3rd party skills in 2 locations:
 
-- `/opt/mycroft/third_party`
-- The file `mycroft.ini` in the `[core]` section and the value of the variable `third_party_skills_dir`.  By default this value is `~/.mycroft/third_party_skills`
+- `/opt/mycroft/third_party` - system wide.
+- A value from the ini file `mycroft.ini` in the `[core]` section and the value of the variable `third_party_skills_dir`.  By default this value is `~/.mycroft/third_party_skills`
 
 ##### Example `[core]` section of `mycroft.ini`
 ```
