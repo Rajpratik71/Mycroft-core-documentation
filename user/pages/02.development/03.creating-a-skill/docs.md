@@ -195,7 +195,7 @@ In this situation you'll want to create a 3rd party skill.  The file structure &
 
 3rd party skills run in the same virtualenv mycroft runs in.  So you may need to also `workon mycroft` and `pip install` any additional requirements.
 
-This makes skill distribution a simple task.
+Distribution of your skill is a simple task.
 
 - Zip the skills folder
   - `zip -r ./my_skill.zip ./my_skill`
