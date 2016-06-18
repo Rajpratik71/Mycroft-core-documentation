@@ -78,7 +78,7 @@ The `test` folder contains a subfolder for intent, inside of which are `.intent.
 ## Creating your first skill
 
 ### Header
-When creating the skill, you need to start by importing the proper libraries for use in skills. 
+When creating the skill, you need to start by importing the proper libraries for use in skills.
 
 ```python
 from os.path import dirname
@@ -110,13 +110,13 @@ In the hello world skill, the general outline looks like
 ```python
 class HelloWorldSkill(MycroftSkill):
     def __init__(self):
-    
+
     def initialize(self):
-    
+
     def handle_thank_you_intent(self, message):
     ...
     def stop(self):
-    
+
 def create_skill():
     return HelloWorldSkill()
 ```
@@ -152,7 +152,7 @@ This is where you tell Mycroft to actually do what you want him to do. This can 
 def handle_thank_you_intent(self, message):
     self.speak_dialog("welcome")
 ```
-This simply tells Mycroft to randomly select one of the pieces of dialogue from the welcome.dialog file and speak it. 
+This simply tells Mycroft to randomly select one of the pieces of dialogue from the welcome.dialog file and speak it.
 In your skill, you can include as many ways of phrasing what he says as you want.
 
 Note that in most Mycroft skills, the `handle_intent` function will include an API call or something else with a potential failure case, so it is best to enclose what you want to run in a `try`/`except` block.
@@ -187,3 +187,27 @@ Intent tests take the form of an `.intent.json` file with a structure inside tha
 `utterance`: This is the sample phrase that you would say to Mycroft, and that should trigger your intents.
 `intent_type`: This is the type of intent that should be found in your sample utterance.
 `intent`: In this structure, you should list each keyword defined by your skill that should be found in the utterance.
+
+### 3rd party skills
+Sometimes you'll want to write a special skill that's just for you, or users of your project.
+
+In this situation you'll want to create a 3rd party skill.  The file structure & behavior of a 3rd party skill is the same as a skill dir in [mycroft/skills](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/)  So your users can easily unpack a zip to `~/.mycroft/third_party_skills` or for system wide deployment `/opt/mycroft/third_party`.  You'll need to restart the skills service any time a new 3rd party skill is installed.
+
+Mycroft looks for 3rd party skills in 2 locations:
+
+- `/opt/mycroft/third_party`
+- The file `mycroft.ini` in the `[core]` section and the value of the variable `third_party_skills_dir`.  By default this value is `~/.mycroft/third_party_skills`
+
+##### Example `[core]` section of `mycroft.ini`
+```
+[core]
+lang = "en-us"
+location = "Lawrence, Kansas"
+time.format = "%A, %B %d, %Y at %H:%M"
+stop_threshold = 2  # in seconds
+third_party_skills_dir = "~/.mycroft/third_party_skills"
+```
+
+Currently there is no skill isolation this may be a security risk so take that into consideration before you write a skill to get the balance of your bank account.
+
+
