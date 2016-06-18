@@ -191,9 +191,9 @@ Intent tests take the form of an `.intent.json` file with a structure inside tha
 ### 3rd party skills
 Sometimes you'll want to write a special skill that's just for you, or users of your project.
 
-3rd party skills run in the same virtualenv mycroft runs in.  So you may need to also `workon mycroft` and `pip install` any additional requirements.
-
 In this situation you'll want to create a 3rd party skill.  The file structure & behavior of a 3rd party skill is the same as a skill dir in [mycroft/skills](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/).
+
+3rd party skills run in the same virtualenv mycroft runs in.  So you may need to also `workon mycroft` and `pip install` any additional requirements.
 
 This makes skill distribution a simple task.
 
