@@ -204,7 +204,7 @@ This makes skill distribution a simple task.
 Mycroft looks for 3rd party skills in 2 locations:
 
 - `/opt/mycroft/third_party` - system wide.
-- A value from the ini file `mycroft.ini` in the `[core]` section and the value of the variable `third_party_skills_dir`.  By default this value is `~/.mycroft/third_party_skills`
+- A value from the ini file `mycroft.ini` in the `[core]` section and the value of the variable `third_party_skills_dir`.  By default this value is `~/.mycroft/third_party_skills`.
 
 ##### Example `[core]` section of `mycroft.ini`
 ```
