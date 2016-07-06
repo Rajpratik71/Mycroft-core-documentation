@@ -1,3 +1,9 @@
+---
+title: 'Cerberus'
+taxonomy:
+    category:
+        - docs
+---
 ## Cerberus Device and Account Manager
 Mycroft AI, Inc. - the company behind Mycroft maintains the Cerberus device and account management system. Developers can sign up at https://cerberus.mycroft.ai
 

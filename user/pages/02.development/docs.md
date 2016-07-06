@@ -5,7 +5,7 @@ taxonomy:
         - docs
 ---
 
-# Introduction to Document
-This document is a work in progress and will continually be updated and fixed during the development cycle and as new issues are found and worked on.
+# Introduction
+This document is a work in progress and will be continually updated and fixed during the development cycle as we find and work on new issues and features.
 
-The below sections should walk you through the process of setting up Mycroft-core in linux environments (for now) with available dependencies. In addition we have guides for starting the services and using them. You can be part of the discussion and ask questions in the Slack channels and forums. Check out the [contributing section.](https://docs.mycroft.ai/contributing)
+The below sections should walk you through the process of setting up Mycroft-core in linux environments (for now) with available dependencies. The sections also discuss starting and using the services, as well as pairing with Cerberus and debugging various issues. The Feel free to join our discussions about Mycroft in our Slack channels and official forums. Check out the [contributing section.](https://docs.mycroft.ai/contributing)

@@ -1,3 +1,9 @@
+---
+title: 'Getting Started'
+taxonomy:
+    category:
+        - docs
+---
 # Getting Started in Ubuntu - Development Environment
  - run `build_host_setup.sh` (installs debian packages with apt-get, please read it)
  - run `dev_setup.sh` (feel free to read it, as well)

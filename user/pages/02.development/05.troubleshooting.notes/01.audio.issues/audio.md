@@ -1,52 +1,56 @@
-
+---
+title: 'Audio issues'
+taxonomy:
+    category:
+        - docs
+---
 # Audio errors and issues
 If your questions and issues aren't addressed here please reach out to us via the support channels.
 
 ## Alsa
-Alsa is the sound architecture on most linux systems but particularly on Ubuntu and Raspbian. Alsa comes with a series of tools used to select a usb audio device and configure them for use with your device.
+Alsa is the sound architecture on most linux systems, but particularly on Ubuntu and Raspbian. It comes with a series of tools used to select a usb audio device and configure them for use with your device.
 
-Most of the Alsa configuration is done on the command line and below are some useful links and configuration files to help you setup and debug your system. These are by no means the end-all commands and tools and you will need to look up configuration files for your own distribution. There are many changes based on linux distribution and release so google is still your best friend.
+Most of the Alsa configuration is done on the command line. Below are some useful links and configuration files to help you setup and debug your system. Note that these are by no means all of the commands you will need. You should still look up configuration files for your own distribution. Alsa changes frequently with new linux distributions and releases, so it's still helpful to Google things.
 
 ### Useful audio cli commands and apps
 
  - aplay -l
-    - command lind audio-player lists audio devices
+    - Command line audio-player, lists audio devices
  - aplay -L
-    -  list all PCMs defined
+    -  List all PCMs defined
  - lsusb
-    - Should show plugged in usb devices. In particular your audio device.
-    - Mine shows as C-media usb
+    - Shows all plugged in usb devices, including your audio device.
+    - For example, some audio devices show up as C-media usb
  - pulseaudio -D
-    - sound app to install `apt-get install pulseaudio`
-    - the -D runs the daemon and needed to be running on my device for audio to work
-    - puleaudio is run from the visual system and you should find it in your start menu
+    - Puleaudio is a sound application. To install, run  `apt-get install pulseaudio`
+    - The -D option runs the daemon, which needs to be running on the device for audio to work
+    - The application is run visually. Look in your apps to find it.
  - alsamixer
-    - built in [sound mixer](http://www.linuxplanet.com/linuxplanet/tutorials/7134/1)
-    - lets you select your device and get it running from command line.
+    - Alsamixer is a built-in [sound mixer](http://www.linuxplanet.com/linuxplanet/tutorials/7134/1) that lets you select your device and get it running from the command line.
 
 ### Raspbian and Ubuntu Jessie
 
-Jessie has moved the alsa configuration files see below for the new files and locations. 
+Jessie has moved the alsa configuration files. See below for the new files and locations. 
 
- - Alsa docs for a general sense: ![docs](http://alsa.opensrc.org/MultipleCards#alsa.conf_structure)
+ - General Alsa docs: ![docs](http://alsa.opensrc.org/MultipleCards#alsa.conf_structure)
  - Config files
     - /usr/share/alsa/alsa.conf
     - ~/.asoundrc
 
-#### Mycroft voice Alsa error: `ALSA lib confmisc.c:768:(parse_card) cannot find card '0'` on running mycroft.sh start
+#### Mycroft voice Alsa error: `ALSA lib confmisc.c:768:(parse_card) cannot find card '0'` when running ./mycroft.sh start
 
-I get this error on initial install and running the setup of my mycroft-core on a raspberry pi 3 device prior to the Cerberus registration. The error shows that I had issues using my usb device and finding card 0. I could see my [kinobo usb 2.0 device but not use it.](https://www.amazon.com/Kinobo-Microphone-Desktop-Recognition-Software/dp/B00IR8R7WQ) While i'm setting this up for my own usb device this should help other devices and card #s. 
+We see this error on initial install and running the setup for mycroft-core on a raspberry Pi 3 device prior to the Cerberus registration. The error displayed indicates that the Raspbian install had issues finding the usb device and card 0. We saw the [kinobo usb 2.0 device but but could not utilize it.](https://www.amazon.com/Kinobo-Microphone-Desktop-Recognition-Software/dp/B00IR8R7WQ)
 
-I found the fix in [this](http://raspberrypi.stackexchange.com/questions/37177/best-way-to-setup-usb-mic-as-system-default-on-raspbian-jessie) StackOverflow(SO) post.
+The solution for this problem was found in [this](http://raspberrypi.stackexchange.com/questions/37177/best-way-to-setup-usb-mic-as-system-default-on-raspbian-jessie) StackOverflow(SO) post. This worked for the Kinobo device but should help others with different usb devices find their card #s.
 
-Short version of the instructions I'm listing below:
+Short version of the instructions listed below:
 
- 1. Figure out Card and Device # by running lsusb (See below).
+ 1. Discover Card and Device # by running lsusb (See below).
  2. Run `sudo nano /usr/share/alsa/alsa.conf`
-    1. Change numbers below to your card # (1 for me)
+    1. Change numbers below to your card # (1 for my kinobo build)
     2. `defaults.ctl.card 0` to `defaults.ctl.card yourcard#`
     3. `defaults.pcm.card 0` to `defaults.pcm.card yourcard#`
- 4. Create and edit your personal alsa config file by running `sudo nano~/.asoundrc` and changing to your card #.
+ 4. Create and edit your personal alsa configuration file by running `sudo nano~/.asoundrc` and changing to your card #.
 
 > pcm.!default  {
 >     type hw
@@ -58,7 +62,7 @@ Short version of the instructions I'm listing below:
 
  5. Run `sudo reboot`
  6. You may need to run `pulseaudio -D` again prior to running the mycroft start script.
- 7. run `./mycroft.sh start` from the instructions and that should now find the device and you should be able to get your cerberus registration code.
+ 7. Finally run `./mycroft.sh start` from the instructions. That should now discover the device and you should be able to get your cerberus registration code.
 
 ##### Getting your audio device and card #
 Get lsusb readout (The C-Media is my usb audio device):

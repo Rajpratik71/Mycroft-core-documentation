@@ -35,8 +35,8 @@ Channels:
 
  - **#troubleshooting** (errors and general code issues)
  - **#futures** (future code chat and dev code sharing)
- - **#development** (github log)
- - **#general** (general chat or don't know about your troubleshooting issues)
+ - **#development** (github log and general development discussion)
+ - **#general** (general chat about Mycroft related things)
  - **#random** (random links and fun AI stuff)
  - **#mycroft-android** (android app dev)
 

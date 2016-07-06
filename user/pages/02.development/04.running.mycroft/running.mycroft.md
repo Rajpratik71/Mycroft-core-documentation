@@ -1,3 +1,9 @@
+---
+title: 'Running Mycroft'
+taxonomy:
+    category:
+        - docs
+---
 # Running Mycroft
 ## With `start.sh`
 Mycroft provides `start.sh` to run a large number of common tasks. This script uses the virtualenv created by

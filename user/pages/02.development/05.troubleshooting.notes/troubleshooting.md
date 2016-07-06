@@ -1,4 +1,9 @@
-
+---
+title: 'Troubleshooting'
+taxonomy:
+    category:
+        - docs
+---
 # FAQ/Common Errors
 #### Common errors
 As errors arise they will be added to the sub-sections below. This will be a good place to start if you encounter a problem when installing and running mycroft-core prior to reaching out to the forum or Slack channels. 
