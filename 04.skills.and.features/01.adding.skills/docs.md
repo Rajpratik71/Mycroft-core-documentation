@@ -11,7 +11,7 @@ Mycroft AI is a community project. What does this mean? It means we rely on comm
 
 With that comes a minor caveat of a lot of these skills not being fully tested. Some also don't work, but we keep them in the repo as examples to everyone. 
 
-Adding a new skill is as easy as using git clone on a repo to your skills folder. This varies from device to device. For example, there is a shortcut to the **skills** folder in the Home directory of the Raspberry Pi. This shortcut points to 
+Adding a new skill is as easy as using git clone --depth 1 on a repo to your skills folder. This varies from device to device. For example, there is a shortcut to the **skills** folder in the Home directory of the Raspberry Pi. This shortcut points to 
 ```
 /opt/mycroft/skills
 ```
@@ -25,9 +25,9 @@ Once you find the skill you want, cd into your skills directory:
 ````buildoutcfg
 cd /opt/mycroft/skills
 ````
-and use the git clone command. For the Daily meditation skill, for example, you would use this command:
+and use the git clone --depth 1 command. For the Daily meditation skill, for example, you would use this command:
 ````buildoutcfg
-git clone https://github.com/kfezer/daily_meditation.git
+git clone --depth 1 https://github.com/kfezer/daily_meditation.git
 ````
 This will create a new daily_meditation folder in your skills folder. Mycroft should automatically add any newly added skills.
 

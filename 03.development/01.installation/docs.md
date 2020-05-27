@@ -21,6 +21,6 @@ For those who use MacOS or Windows, you can use something like [VirtualBox](http
  - Import your image into VirtualBox
  - Make sure you allocate at least 15 GB of hard drive space, 3 GB of Ram, and 2 cores of your processor. If you run it with one core, that's fine, but keep in mind it will take Mimic a long time to build. 
  
- From there, go to the [git clone install](https://docs.mycroft.ai/installing.and.running/installation/git.clone.install)
+ From there, go to the [git clone --depth 1 install](https://docs.mycroft.ai/installing.and.running/installation/git.clone.install)
 
 

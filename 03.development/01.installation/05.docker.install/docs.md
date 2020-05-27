@@ -10,7 +10,7 @@ This is a development setup, not really ready for production use yet.  Good for 
 
 ## How to build and run
 
-1. Git pull this repository - ```git clone https://github.com/MycroftAI/docker-mycroft.git```
+1. Git pull this repository - ```git clone --depth 1 https://github.com/MycroftAI/docker-mycroft.git```
 
 2. Build the docker image with 
    ```docker build -t ${USER}/mycroft .``` in the directory that you have checked out.

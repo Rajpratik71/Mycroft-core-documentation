@@ -1,5 +1,5 @@
 ---
-title: 'Git Clone Install'
+title: 'git clone --depth 1 Install'
 taxonomy:
     category:
         - docs
@@ -8,7 +8,7 @@ taxonomy:
 ## Downloading Mycroft Core
 
 Once you have your development environment set up, you need to download the latest version of `mycroft-core` from github.
-To do this, you can either directly download it from our [github page](https://github.com/MycroftAI/mycroft-core) or, if you already know how to use git, you can clone it using `git clone https://github.com/MycroftAI/mycroft-core.git`.
+To do this, you can either directly download it from our [github page](https://github.com/MycroftAI/mycroft-core) or, if you already know how to use git, you can clone it using `git clone --depth 1 https://github.com/MycroftAI/mycroft-core.git`.
 
 ## Creating a Development Environment in Ubuntu/Debian/Fedora/Arch
  - Get into the mycroft-core folder you downloaded using `cd mycroft-core`

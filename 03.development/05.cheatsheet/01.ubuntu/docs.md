@@ -8,7 +8,7 @@ taxonomy:
 ## 1. Install Mycroft-Core:
 ```
 cd ~/
-git clone git@github.com:MycroftAI/mycroft-core.git
+git clone --depth 1 git@github.com:MycroftAI/mycroft-core.git
 cd mycroft-core
 ./build_host_setup_debian.sh
 ./dev_setup.sh
@@ -35,7 +35,7 @@ Voice commands - https://docs.mycroft.ai/mark-1/using.mark1
 Let's add spanish radio skill: "Mycroft, spanish news" using 2 commands:
 ```
 cd /ops/mycroft/skills
-git clone https://github.com/ChrisFernandez/skill-radio-rne.git
+git clone --depth 1 https://github.com/ChrisFernandez/skill-radio-rne.git
 ```
 
 Other skills to try - https://github.com/MycroftAI/mycroft-skills
